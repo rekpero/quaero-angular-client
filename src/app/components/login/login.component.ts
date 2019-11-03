@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         console.log(data.error);
         sessionStorage.setItem('isLoggedIn', 'true');
         sessionStorage.setItem('loggedUser', this.email);
-        this._router.navigate(['/']);
+        this._router.navigate(['/categories']);
       });
   }
 }

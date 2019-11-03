@@ -1,7 +1,7 @@
 <div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">
+      <a class="navbar-brand" [routerLink]="['/categories']">
         Quaero Assignment
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -11,7 +11,7 @@
       <div id="navbarNavDropdown" class="navbar-collapse collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" *ngIf="isLoggedIn">
-            <a class="nav-link" [routerLink]="['/']">
+            <a class="nav-link" [routerLink]="['/categories']">
               Home
             </a>
           </li>

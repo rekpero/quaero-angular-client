@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     this._apiService.registerUser({username, email: this.email, password: this.password}).subscribe((data) => {
       sessionStorage.setItem('isLoggedIn', 'true');
       sessionStorage.setItem('loggedUser', this.email);
-      this.router.navigate(['/']);
+      this.router.navigate(['/categories']);
     });
 
   }
