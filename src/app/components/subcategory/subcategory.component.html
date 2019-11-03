@@ -1,0 +1,31 @@
+<div class="bg-light px-3 py-2 d-flex align-items-center mt-3">
+  <div class="mr-auto">
+    <div class="text-primary"><strong style="font-size: 28px;">{{subCategoryName}}</strong></div>
+    <div *ngIf="subCategoryDesc !== ''"><span><strong>Description: </strong></span><span>{{subCategoryDesc}}</span>
+    </div>
+    <div><span><strong>Type: </strong></span><span class="badge badge-primary">{{subCategoryType}}</span></div>
+    <div class="mb-2"><span><strong>Parent Type: </strong></span><span class="badge badge-primary">{{subCategoryParentType}}</span></div>
+  </div>
+  <div class="mx-2">
+    <button class="btn btn-info text-white d-flex align-items-center" type="button" data-toggle="modal"
+      data-target="#addSubCategoryModal">
+      <img src="assets/images/edit.svg" alt="edit" style="height: 16px; width: 16px;" class="mr-1"><strong>Edit</strong>
+    </button>
+  </div>
+  <div>
+    <button class="btn btn-danger d-flex align-items-center" type="button" (click)="deleteSubCategory()">
+      <img src="assets/images/delete.svg" alt="edit" style="height: 16px; width: 16px;"
+        class="mr-1"><strong>Delete</strong>
+    </button>
+  </div>
+</div>
+<div class="px-3 py-2 mt-3"><h3><strong>Parent Category</strong></h3></div>
+<div class="bg-light px-3 py-2 d-flex align-items-center">
+  <div class="mr-auto" (click)="navigateToCategory()">
+    <div class="text-secondary"><strong style="font-size: 28px;">{{categoryName}}</strong></div>
+    <div *ngIf="categoryDesc !== ''"><span><strong>Description: </strong></span><span>{{categoryDesc}}</span>
+    </div>
+    <div class="mb-2"><span><strong>Type: </strong></span><span class="badge badge-secondary">{{categoryType}}</span></div>
+  </div>
+</div>
+<app-addsubcategorymodal [subcategory]="subCategory" (update)="updateUI($event)"></app-addsubcategorymodal>

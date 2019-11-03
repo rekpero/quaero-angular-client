@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center">
+  <div class="col-md-5">
+    <div style="margin-top: 5em; padding: 4em" class="rounded-lg shadow border bg-secondary text-white">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter email"
+          [(ngModel)]="email" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="password" />
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-dark px-4 mt-2" (click)="loginUser()">
+          Login
+        </button>
+      </div>
+      <hr class="bg-white" />
+      <div class="text-center">
+        <span>
+          New to here?
+          <a [routerLink]="['/register']" class="text-white">
+            <strong>Signup</strong>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

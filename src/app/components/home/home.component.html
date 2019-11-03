@@ -1,0 +1,27 @@
+<div class="d-flex align-items-center m-2">
+  <div>
+    <h2>Categories</h2>
+  </div>
+  <div class="ml-auto">
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addCategoryModal">
+      <strong>Add</strong>
+    </button>
+  </div>
+</div>
+<div class="mt-4">
+  <div *ngFor="let category of categories">
+    
+      <div class="row bg-success d-flex align-items-center rounded m-2">
+        <a style="text-decoration: none;" [routerLink]="['/categories', category.id]" class="mr-auto">
+          <div class="mx-3 my-2 text-white">
+            <strong style="font-size: 20px;">{{ category.name }}</strong>
+          </div>
+        </a>
+        <div>
+          <img src="assets/images/delete.svg" alt="edit" style="height: 20px; width: 20px;" class="mx-3" (click)="deleteCategory(category.id)"/>
+        </div>
+      </div>
+  </div>
+</div>
+
+<app-addcategorymodal (update)="updateUI($event)"></app-addcategorymodal>
